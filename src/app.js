@@ -9,8 +9,6 @@ import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
-import { log } from 'util';
-import { setTimeout } from 'timers';
 
 const store = configureStore();
 
