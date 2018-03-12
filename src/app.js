@@ -10,6 +10,12 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
+import expenses from './tests/fixtures/expenses';
+import getExpensesTotal from './selectors/expenses-total.js';
+
+const total = getExpensesTotal(expenses);
+console.log(total);
+
 const store = configureStore();
 
 console.log(store.getState());
