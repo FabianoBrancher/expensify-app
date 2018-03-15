@@ -58,3 +58,5 @@ typings/
 .env
 
 public/dist/
+.env.development
+.env.test
