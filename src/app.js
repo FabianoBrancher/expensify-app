@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { startSetExpenses } from './actions/expenses';
+import { startSetExpenses, clearLocalExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
@@ -49,7 +49,8 @@ firebase.auth().onAuthStateChanged((user) => {
             }
         });
     } else {
-        store.dispatch(logout());
+        store.dispatch(logout());     
+        store.dispatch(clearLocalExpenses());
         renderApp();
         history.push('/');
     }
